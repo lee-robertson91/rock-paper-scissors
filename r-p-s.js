@@ -34,8 +34,6 @@ function getRandomInt(min, max) {
     const maxFloored = Math.floor(max);
     return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);}
 
-console.log(getRandomInt(1, 4))
-
 //The code below works in so far as printing a word, but only Rock is being printed regardless of the number that is generated. 
 //function getComputerChoice() {
  //   let rpsSelector = getRandomInt(1, 4);
@@ -69,28 +67,20 @@ console.log(getRandomInt(1, 4))
 // If I write: if (getRandomInt === 1) {rps = 'Rock';} etc... only Scissors is logged in the console. 
 // If I write: if (num === 1) {return 'Rock';} etc... only Scissors is logged. 
 
-function getComputerChoice(num) {  
-    getRandomInt(1, 4);   
-    if (num === 1) {
-        return 'Rock';}
-        else if (num === 2) { 
-          return 'Paper';}
-            else{
-            return 'Scissors';};
-        }
+let comp = getRandomInt(1, 4);
+console.log(comp)
 
-console.log(getComputerChoice())
+function getComputerChoice() {  
+    let comp = getRandomInt(1, 4); 
+    if (comp === 1) {
+     console.log('Rock');}
+     else if (comp === 2) {
+     console.log('Paper');}
+     else {
+     console.log('Scissors');}
+    }  
+// The above code works. I needed to set a variable for the getRandomInt fuction to return a number.
+// I then needed to compare the number stored in the 'comp' variable and then output what I wanted in the console. 
+
+
  
-function anotherTake () {
-    switch(generateComputerChoice) {
-        case "Rock":
-            console.log(Rock)
-            break;
-        case "Paper":
-            console.log(Paper)
-            break;
-        case "Scissors":
-            console.log(Scissors)
-        break;
-    }
-}
