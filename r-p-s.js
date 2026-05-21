@@ -68,7 +68,7 @@ function getRandomInt(min, max) {
 // If I write: if (num === 1) {return 'Rock';} etc... only Scissors is logged. 
 
 let comp = getRandomInt(1, 4);
-console.log(comp)
+//console.log(comp)
 
 function getComputerChoice() { 
     if (comp === 1) {
@@ -78,7 +78,8 @@ function getComputerChoice() {
      else {
      console.log('Scissors');}
     }  
-getComputerChoice();
+//getComputerChoice();
+
 // The above code works. I needed to set a variable for the getRandomInt fuction to return a number.
 // I then needed to compare the number stored in the 'comp' variable and then output what I wanted in the console. 
 
@@ -87,12 +88,51 @@ getComputerChoice();
 // I need the text inputted by the user to log in the console panel. 
 
 let choice = prompt ('Rock (and Stone)' + ',' + ' ' + 'Paper' + ',' + '' + 'Scissors', );
+console.log(choice);
 
 function getHumanChoice(choice) {
     return 'You chose' + ' ' + choice + '!';
 }   
  
 let human = getHumanChoice(choice);
-console.log(human)
+//console.log(human)
 
 //The above works on my first attempt. I'm suspicious. 
+
+let humanScore = 0;
+let computerScore = 0;
+
+// I now need to create a function to play a round. 
+// TOP is telling me how to do this (create a function that takes the human and computer choices as parameters.
+
+let humanChoice = 'nothing';
+let computerChoice = 'nothing';
+
+
+        
+function playRound(humanChoice, computerChoice){
+
+    humanChoice = getHumanChoice(choice);
+
+    computerChoice = getComputerChoice();
+
+    if (humanChoice = 'Rock' && computerChoice == 2) {
+        console.log('You lose');}
+
+        else if (humanChoice = 'Rock' && computerChoice == 3) {
+            console.log('You win');}
+
+    else if (humanChoice = 'Paper' && computerChoice == 1) {
+        console.log ('You win');}
+
+            else if (humanChoice = 'Paper' && computerChoice == 3) {
+                console.log('You lose');}
+        else if (humanChoice = 'Scissors' && computerChoice == 1) {
+            console.log ('You lose');} 
+            else if (humanChoice = 'Scissors' && computerChoice == 2) {
+                console.log('You win');}
+            else {
+                console.log('Draw');}
+}
+
+playRound();
