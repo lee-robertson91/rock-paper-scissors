@@ -70,8 +70,7 @@ function getRandomInt(min, max) {
 let comp = getRandomInt(1, 4);
 console.log(comp)
 
-function getComputerChoice() {  
-    let comp = getRandomInt(1, 4); 
+function getComputerChoice() { 
     if (comp === 1) {
      console.log('Rock');}
      else if (comp === 2) {
@@ -79,8 +78,21 @@ function getComputerChoice() {
      else {
      console.log('Scissors');}
     }  
+getComputerChoice();
 // The above code works. I needed to set a variable for the getRandomInt fuction to return a number.
 // I then needed to compare the number stored in the 'comp' variable and then output what I wanted in the console. 
 
+// I now need to create a getHumanChoice() function. It wants me to use the prompt function to do this. 
+// I need to make a prompt with a text input box.
+// I need the text inputted by the user to log in the console panel. 
 
+let choice = prompt ('Rock (and Stone)' + ',' + ' ' + 'Paper' + ',' + '' + 'Scissors', );
+
+function getHumanChoice(choice) {
+    return 'You chose' + ' ' + choice + '!';
+}   
  
+let human = getHumanChoice(choice);
+console.log(human)
+
+//The above works on my first attempt. I'm suspicious. 
