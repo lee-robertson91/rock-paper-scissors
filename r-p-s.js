@@ -68,7 +68,7 @@ function getRandomInt(min, max) {
 // If I write: if (num === 1) {return 'Rock';} etc... only Scissors is logged. 
 
 let comp = getRandomInt(1, 4);
-//console.log(comp)
+console.log(comp)
 
 function getComputerChoice() { 
     if (comp === 1) {
@@ -78,7 +78,7 @@ function getComputerChoice() {
      else {
      console.log('Scissors');}
     }  
-//getComputerChoice();
+getComputerChoice();
 
 // The above code works. I needed to set a variable for the getRandomInt fuction to return a number.
 // I then needed to compare the number stored in the 'comp' variable and then output what I wanted in the console. 
@@ -107,32 +107,30 @@ let computerScore = 0;
 
 let humanChoice = 'nothing';
 let computerChoice = 'nothing';
-
-
-        
+   
 function playRound(humanChoice, computerChoice){
+    humanChoice = choice.toLowerCase();
+    computerChoice = comp;
 
-    humanChoice = getHumanChoice(choice);
-
-    computerChoice = getComputerChoice();
-
-    if (humanChoice = 'Rock' && computerChoice == 2) {
+    if (humanChoice === 'rock' && computerChoice === 2) {
         console.log('You lose');}
-
-        else if (humanChoice = 'Rock' && computerChoice == 3) {
+        else if (humanChoice === 'rock' && computerChoice === 3) {
             console.log('You win');}
-
-    else if (humanChoice = 'Paper' && computerChoice == 1) {
-        console.log ('You win');}
-
-            else if (humanChoice = 'Paper' && computerChoice == 3) {
+    else if (humanChoice === 'paper' && computerChoice === 1) {
+        console.log('You win');}
+            else if (humanChoice === 'paper' && computerChoice === 3) {
                 console.log('You lose');}
-        else if (humanChoice = 'Scissors' && computerChoice == 1) {
-            console.log ('You lose');} 
-            else if (humanChoice = 'Scissors' && computerChoice == 2) {
+        else if (humanChoice === 'scissors' && computerChoice === 1) {
+            console.log('You lose');} 
+            else if (humanChoice === 'scissors' && computerChoice === 2) {
                 console.log('You win');}
             else {
                 console.log('Draw');}
 }
 
-playRound();
+
+playRound(humanChoice, computerChoice);
+
+//The code above works. It was not working for me earlier as I had put the wrong refence in for humanChoice. 
+//I had been putting in human instead of choice which was returning only draw results. 
+//The built in toLowerCase() function made it easy to ensure that the human entry is case insensitive. 
